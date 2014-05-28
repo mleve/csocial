@@ -214,3 +214,11 @@ body{margin:40px;}
 .detailsIcon{
 	width: 30px;
 }
+
+.recommendation{
+	padding: 5px;
+	margin-top: 2px;
+}
+.close_recommendation{
+	border: 1px solid #3b5998;
+}
