@@ -222,3 +222,7 @@ body{margin:40px;}
 .close_recommendation{
 	border: 1px solid #3b5998;
 }
+
+.intro-header{
+	padding-bottom: 0px;
+}
