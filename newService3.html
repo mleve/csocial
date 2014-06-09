@@ -39,49 +39,36 @@
     </nav>
 
 
-<div class="container">
+<div class="container" style="margin: 0px">
 	<br>
 	<div class="stepwizard">
 		<div class="stepwizard-row">
 			<div class="stepwizard-step">
-				<button type="button" class="btn btn-default btn-circle">1</button>
+				<a href="newService1.html" class="btn btn-default btn-circle">1</a>
+				<p>Datos del Servicio</p>
+			</div> 
+			<div class="stepwizard-step">
+				<a href="newService2.html" class="btn btn-default btn-circle">2</a>
 				<p>Datos de contacto</p>
 			</div>
 			<div class="stepwizard-step">
-				<button type="button" class="btn btn-default btn-circle">2</button>
-				<p>Datos del servicio</p>
-			</div>
-			<div class="stepwizard-step">
 				<button type="button" class="btn btn-warning btn-circle">3</button>
-				<p>Invitar clientes</p>
+				<p>Confirmar servicio</p>
 			</div> 
 		</div>
 	</div>
 
-      <br>
-      <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
+    <br>
+    <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
 	<div class="row" style="margin-top: 20px">
 		<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form">
-				<h3>Invita a tus amigos de tus redes sociales a que te recomienden!</h3>
-				<br><br><br><br>
+				<h3>Invita a tus clientes de tus redes sociales a que te recomienden!</h3>
+				<br><br>
 			</form>
 		</div>
 	</div>
-	<!-- Modal -->
-	<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+
 </div>
 
 
@@ -91,10 +78,18 @@
     </footer>
 
 
-
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
+
+
+    <script>
+    $('#otro').on('click',function(event){
+    	event.preventDefault();
+    	$('#otro_servicio').css("display","");
+    });
+    </script>
+
 
 </body>
 
