@@ -19,6 +19,17 @@
     <!-- Add custom CSS here -->
     <link href="css/landing-page.css" rel="stylesheet">
     <link href="css/customs.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="all">
+    <link href="libraries/prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/bootstrap-duallistbox.css" rel="stylesheet" type="text/css" media="all">    
+
+    <script src="libraries/modernizr/modernizr-custom.min.js"></script>
+    <script src="libraries/jquery-1.9.0.min.js"></script>
+    <script src="libraries/prettify/prettify.js"></script>
+    <script src="js/jquery.bootstrap-duallistbox.js"></script>
+    <script src="libraries/jquery-placeholder/jquery.placeholder.js"></script>
+
 
 </head>
 
@@ -58,6 +69,7 @@
 		</div>
 	</div>
 
+    
     <br>
     <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
 	<div class="row" style="margin-top: 20px">
@@ -68,59 +80,78 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Nombre" tabindex="1">
+							<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Mario" tabindex="1">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Apellidos" tabindex="2">
+							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Leverone Quevedo" tabindex="2">
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
-					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" tabindex="4">
+					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="mleve@ug.uchile.cl" tabindex="4">
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div class="form-group">
-							<input type="text" name="Direccion" class="form-control input-lg" placeholder="Dirección" tabindex="5">
+							<input type="text" name="Direccion" class="form-control input-lg" placeholder="Calle #123" tabindex="5">
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				
+				<h3 style="font-size: 18px">Seleccione las comunas donde ofrece su servicio:</h3>
 				<br>
-					<div class="col-xs-12 col-sm-6 col-md-12">
-							<label id="acceptConditions"><input type="checkbox">Acepto los <a href="#" data-toggle="modal" data-target="#t_and_c_m">Términos y Condiciones</a> del sitio.</label>
-							<input type="checkbox" name="t_and_c" id="t_and_c" class="hidden"/>
-							
-					</div>
-				</div>
+				<div class="row" style="margin-left: 15px">
+				<select multiple="multiple" size="10" name="duallistbox_demo2" class="demo2 col-md-12">
+                            <option value="option1" selected="selected">Comuna 1</option>
+                            <option value="option2">Comuna 2</option>
+                            <option value="option3">Comuna 3</option>
+                            <option value="option4">Comuna 4</option>
+                            <option value="option5">Comuna 5</option>
+                            <option value="option6">Comuna 6</option>
+                            <option value="option7">Comuna 7</option>
+                            <option value="option8">Comuna 8</option>
+                            <option value="option9">Comuna 9</option>
+                            <option value="option10">Comuna 10</option>
+                            <option value="option11">Comuna 11</option>
+                            <option value="option12">Comuna 12</option>
+                            <option value="option13">Comuna 13</option>
+                            <option value="option14">Comuna 14</option>
+                            <option value="option15">Comuna 15</option>
+                            <option value="option16">Comuna 16</option>
+                            <option value="option17">Comuna 17</option>
+                            <option value="option18">Comuna 18</option>
+                            <option value="option19">Comuna 19</option>
+                            <option value="option20">Comuna 20</option>
+                        </select>
+                        <script>
+                            var demo2 = $('.demo2').bootstrapDualListbox({
+                                nonselectedlistlabel: 'No seleccionadas',
+                                selectedlistlabel: 'Seleccionadas',
+                                preserveselectiononmove: 'Movidas',
+                                moveonselect: false,
+                            });
+                        </script>
+                </div>        
 				<br>
+                <h3 style="font-size: 18px">Seleccione el horario de trabajo:</h3>
+
+				<br>
+                <h3 style="font-size: 18px">Seleccione su medio de contacto de preferencia:</h3>
+
+				<br><br>
 				<a href="newService3.html" class="btn btn-warning pull-right"> Siguiente </a>
 				<br>
 			</form>
 		</div>
 	</div>
-	<!-- Modal -->
-	<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+
 </div>
 
 
-
     <footer>
-	<p class="copyright text-muted small" style="margin-top: 0px">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+	<p class="copyright text-muted small" style="margin-top: 0px"></p>
     </footer>
 
 
