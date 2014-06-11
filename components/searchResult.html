@@ -123,6 +123,10 @@
 				<h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> Juanito Peres Perez</h4>
 			</div>
 				<div class="modal-body" style="padding: 5px;">
+					<div class="alert alert-success alert-dismissable exito" style="display:none;">
+					  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					  <strong>Enviado! </strong> Revisaremos los datos, gracias por informar del problema.
+					</div>
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
 							<img src="img/chart_bar.png" class="img-responsive quality-bar"/>
@@ -130,20 +134,45 @@
 							<p><a href="#">10 Recomendaciones</a></p>							
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-8" style="padding-bottom: 10px;">
+							<form class="form-inline" role="form">
+							<div class="row reportar" style="display:none;">
+								<p> Selecciona que datos estan erroneos: </p>
+							</div>
 							<div class="row">
 								<img class="detailsIcon" src="img/map.png"/> Calle falsa #123 Santiago
+								<div class="checkbox reportar" style="display:none;">
+								    <label>
+								      <input type="checkbox"> 
+								    </label>
+								</div>
 							</div>
 							<div class="row">
 								<img class="detailsIcon" src="img/phone.png"/> 8-8283243
+								<div class="checkbox reportar" style="display:none;">
+								    <label>
+								      <input type="checkbox"> 
+								    </label>
+								</div>
 							</div>
 							<div class="row">
 								<img class="detailsIcon" src="img/email.png"/> asdf@gmail.com <i class="fa fa-exclamation-triangle" style="color: #F5D72C; "></i>
+								<div class="checkbox reportar" style="display:none;">
+								    <label>
+								      <input type="checkbox"> 
+								    </label>
+								</div>
+							</div>
+							<br>
+							<div class="row reportar"  style="display:none;">
+								<p>Comentario: (300 caracteres max)</p>
+								<textarea class="form-control" rows="3" style="width: 80%;"></textarea>
 							</div>
 							<br>
 							<div class="row">
 								<button class="btn btn-success">Contactar</button>
-								<button class="btn btn-danger">Reportar datos erroneos</button>
+								<button class="btn btn-danger" id="boton_reportar">Reportar datos erroneos</button>
 							</div>
+							</form>
 						</div>
 					</div>
 					<div class="row">
@@ -175,7 +204,7 @@
 							<div class="tabbable" id="tabs-133906"> <!-- Only required for left/right tabs -->
 								<ul class="nav nav-tabs">
 									<li class="active"><a href="#panel-recomendado" data-toggle="tab" >Lo recomiendan</a></li>
-									<li class=""><a href="#panel-neutro" data-toggle="tab" >Ni bien ni mal</a></li>
+									<li class=""><a href="#panel-neutro" data-toggle="tab" >Neutro</a></li>
 									<li class=""><a href="#panel-no_recomendado" data-toggle="tab" >Debe mejorar</a></li>
 								</ul>
 								<div class="tab-content">
@@ -205,10 +234,10 @@
 										</div>
 									</div>
 									<div class="tab-pane" id="panel-neutro">
-										<p contenteditable="true">Howdy, I'm in Section 2.</p>
+										<p contenteditable="true"></p>
 									</div>
 									<div class="tab-pane" id="panel-no_recomendado">
-										<p contenteditable="true">Howdy, I'm in Section 3.</p>
+										<p contenteditable="true"></p>
 									</div>
 								</div>
 							</div>
@@ -225,3 +254,17 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$('#boton_reportar').on("click",function(event){
+		event.preventDefault();
+		if($(this).html() != "ENVIAR"){
+			$('.reportar').css("display","");
+			$(this).html("ENVIAR");
+		}
+		else{
+			$(".exito").css("display","");
+			$(".reportar").css("display","none");
+			$(this).css("display","none");
+		}
+	});	
+</script>

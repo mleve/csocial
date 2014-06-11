@@ -64,21 +64,31 @@
                         <form id="loginform" class="form-horizontal" role="form">
                             
 							<div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-map-marker"></i> Comuna</span>
-										<select class="form-control" name="comune">
-											<option value="">Seleccione una</option>
-										</select>                                  
+                                        <span class="input-group-addon"><i class="fa fa-map-marker"></i> Comuna(s)</span>
+                                        <input type="text" name="comuna" />                               
+                            </div>
+                            <div class="row" id="comunas_container">
+
                             </div>        
                             <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-briefcase"></i> Tipo de servicio</span>
+                                        <span class="input-group-addon"><i class="fa fa-briefcase"></i> Servicio</span>
 										<select class="form-control" name="service">
-											<option value="">Seleccione uno</option>
+                                            <option value="">Seleccione uno</option>
+                                            <option value="clasesPart">Clases particulares</option>
+                                            <option value="">Gasfitería</option>
+                                            <option value="">Reparación de Bicicletas</option>
+                                            <option value="">Reparación de Celulares</option>
+											<option value="">Reparación de Notebooks/Pcs</option>
 										</select>                                  
                             </div> 
-							<div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-bullseye"></i> Especialidad </span>
-										<select class="form-control" name="comune">
-											<option value="">Seleccione una</option>
+							<div id="subcat" style="margin-bottom: 25px; display: none;" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-list"></i> Subcategoría </span>
+										<select class="form-control" name="subcat">
+                                            <option value="">Todas</option>
+                                            <option value="">Algebra universitario</option>
+                                            <option value="">Calculo universitario</option>
+                                            <option value="">Otros universitario</option>
+											<option value="">Educación media</option>
 										</select>                                  
                             </div>
 							<div style="margin-top:10px" class="form-group">
@@ -116,6 +126,35 @@
 				$("#resultDiv").html(result);
 			});
 		});
+
+        $("select[name=service]").on("change",function(event){
+            if($(this).val() == 'clasesPart')
+                $("#subcat").css("display","");
+            else
+                $("#subcat").css("display","none");
+        });
+
+        $("input[name=comuna]").bind("keypress", {}, keypressInBox);
+
+        function keypressInBox(e) {
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if (code == 13) { //Enter keycode                        
+                e.preventDefault();
+                var comuna = $(this).val();
+
+                $(this).val("");
+
+
+                jQuery('<div/>', {
+                    class: "alert alert-dismissable",
+                    style: "display:inline-block;",
+                    html: '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + comuna,
+                }).appendTo('#comunas_container');
+                            
+            }
+        
+        };
+
 	</script>
 
 </body>
