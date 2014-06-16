@@ -51,33 +51,20 @@
         </div>
         <!-- /.container -->
     </nav>
-
-
-    <div class="intro-header">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1 style="color: black">Encuéntrelo</h1>
-                        <h2 style="color: black">El sitio para publicar y encontrar todos los servicios que necesites. </h2>
-                        <h3 style="color: black"> ¿ Qué es lo que deseas hacer ?</h3>
-			<hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li><a href="search.html" class="btn btn-default btn-lg"><i class="fa fa-search fa-fw"></i> <span class="network-name">Buscar Servicios</span></a>
-                            </li>
-                            <li><a href="newService1.html" class="btn btn-default btn-lg"><i class="fa fa-briefcase fa-fw"></i> <span class="network-name">Publicar mi servicio</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3 column ui-sortable">
+            <div class="list-group">
+                <a href="#" class="list-group-item"><span class="badge">5</span>Notificaciones</a>
+                 <a href="#" class="list-group-item active">Servicios</a>
+                 <a href="#" class="list-group-item ">Calificar</a>
             </div>
+        </div>
+        <div class="col-md-9 column ui-sortable contentDiv">
 
         </div>
-        <!-- /.container -->
-
     </div>
-    <!-- /.intro-header -->
+
 
 
     <footer>
@@ -87,9 +74,14 @@
 
 
     <!-- JavaScript -->
+
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
-
+    <script type="text/javascript">
+        $.ajax('components/userServices.html').done(function(result){
+            $('.contentDiv').html(result);
+        });
+    </script>
 </body>
 
 </html>

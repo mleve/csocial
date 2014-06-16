@@ -238,3 +238,13 @@ body{margin:40px;}
     position: absolute;
     z-index: 2;
 }
+
+.msg-header{
+  border: 1px solid #cecece;
+  background-color: #9CF08D;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.message{
+  border: 1px solid #cecece;
+}
