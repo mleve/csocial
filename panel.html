@@ -24,34 +24,8 @@
 
 <body>
     <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html" style="font-size: 25px">Encuéntrelo</a>
-                    </div>
+        <div class="col-md-12 navbarDiv">
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="sign_in.html"><i class="fa fa-user fa-fw" style="font-size: 20px"></i> Bienvenido Mario</a>
-                            </li>
-                            <li><a href="#" >Notificaciones</a>
-                            </li>
-                            <li><a href="#" >Mi panel</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container -->
-            </nav>
         </div>
     </div>
     <br>
@@ -85,6 +59,22 @@
         $.ajax('components/userServices.html').done(function(result){
             $('.contentDiv').html(result);
         });
+    </script>
+    
+    <script type="text/javascript">
+        var split = location.search.replace('?', '').split('&').map(function(val){
+          return val.split('=');
+        });
+        
+        if(split[0][0] == 'nuevo'){
+            $.ajax('components/navbarNoLogged.html').done(function(result){
+                $('.navbarDiv').html(result);
+            });
+        }else{
+            $.ajax('components/navbar.html').done(function(result){
+                $('.navbarDiv').html(result);
+            });
+        }
     </script>
 </body>
 

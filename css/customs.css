@@ -249,3 +249,9 @@ body{margin:40px;}
   border: 1px solid #cecece;
   margin-top: 5px;
 }
+
+.service-info{
+  border: 1px solid #cecece;
+  padding: 10px;
+  padding-bottom: 40px;
+}

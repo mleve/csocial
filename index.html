@@ -24,36 +24,12 @@
 
 <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html" style="font-size: 25px">Encuéntrelo</a>
-            </div>
+    <div class="row">
+        <div class="col-md-12 navbarDiv">
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="margin-top: 5px">
-                        <i class="fa fa-user fa-fw" style="font-size: 20px; color: #777;"></i><a style="color: #777"> Bienvenido Mario</a>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Notificaciones</a></li>
-                      <li><a href="#">Mi Panel</a></li>
-                      <li><a href="#">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-    </nav>
+    </div>
+    <br>
 
 
     <div class="intro-header">
@@ -67,7 +43,7 @@
                         <h3 style="color: black"> ¿ Qué es lo que deseas hacer ?</h3>
 			<hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
-                            <li><a href="search.html" class="btn btn-default btn-lg"><i class="fa fa-search fa-fw"></i> <span class="network-name">Buscar Servicios</span></a>
+                            <li><a href="search.html?juan=1" class="btn btn-default btn-lg"><i class="fa fa-search fa-fw"></i> <span class="network-name">Buscar Servicios</span></a>
                             </li>
                             <li><a href="newService1.html" class="btn btn-default btn-lg"><i class="fa fa-briefcase fa-fw"></i> <span class="network-name">Publicar mi servicio</span></a>
                             </li>
@@ -92,6 +68,29 @@
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+        var split = location.search.replace('?', '').split('&').map(function(val){
+          return val.split('=');
+        });
+        
+        if(split[0][0] == 'nuevo'){
+            $.ajax('components/navbarNoLogged.html').done(function(result){
+                $('.navbarDiv').html(result);
+            });
+
+        }
+        else if(split[0][0] == 'juan'){
+            $.ajax('components/navbarJuan.html').done(function(result){
+                $('.navbarDiv').html(result);
+            });
+
+        }
+        else{
+            $.ajax('components/navbar.html').done(function(result){
+                $('.navbarDiv').html(result);
+            });
+        }
+    </script>
 
 </body>
 
