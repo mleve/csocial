@@ -19,8 +19,6 @@
     <!-- Add custom CSS here -->
     <link href="css/landing-page.css" rel="stylesheet">
     <link href="css/customs.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="all">
     <link href="libraries/prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/bootstrap-duallistbox.css" rel="stylesheet" type="text/css" media="all">    
 
@@ -36,7 +34,7 @@
 <body>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container" style="margin-top: 0px">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -44,8 +42,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="font-size: 25px">Encuéntrelo</a>
+                <a class="navbar-brand" href="index.html">Encuéntrelo</a>
             </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="margin-top: 5px">
+                        <i class="fa fa-user fa-fw" style="font-size: 20px; color: #777;"></i><a style="color: #777"> Bienvenido Mario</a>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Notificaciones</a></li>
+                      <li><a href="#">Mi Panel</a></li>
+                      <li><a href="#">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
         <!-- /.container -->
     </nav>
 
@@ -89,30 +104,35 @@
 						</div>
 					</div>
 				</div>
+
                 <div class="row">
                     <h3 style="font-size:18px; padding-left: 15px;">Forma de contacto principal * :</h3> 
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon" style="min-width:0px;">Tipo</span>
-                                        <select class="form-control" name="service">
-                                            <option value="">Seleccione uno</option>
-                                            <option value="">Telefono fijo</option>
-                                            <option value="">Celular</option>
-                                            <option value="">email</option>
-                                        </select>                                  
-                            </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" name="Direccion" class="form-control input-lg" placeholder="" tabindex="5">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+
+							<table class="table" style="width: 100%">
+							      <tbody>
+							        <tr>
+							          <td><input type="radio" name="group1" value="email" checked> Email</td>
+							          <td><input type="text" name="email" class="form-control input-lg" placeholder="mleve@ug.uchile.cl" tabindex="5"></td>
+							        </tr>
+							        <tr>
+							          <td><input type="radio" name="group1" value="telefono"> Teléfono fijo</td>
+							          <td><input type="text" name="telefono" class="form-control input-lg" placeholder="2-2234532" tabindex="5"></td>
+							        </tr>
+							        <tr>
+							          <td><input type="radio" name="group1" value="celular"> Teléfono celular</td>
+							          <td><input type="text" name="celular" class="form-control input-lg" placeholder="8-8283243" tabindex="5"></td>
+							        </tr>							        
+							      </tbody>
+							    </table>
+
                     </div>
                 </div>
+
                 <div class="row">
-                <a id="btn-2" href="#" class="btn btn-default pull-left" style="margin-top: 10px; margin-bottom: 10px; margin-left: 13px;" >Agregar otra</a>
-                </div>
-                <div class="row">
-                    <h3 style="font-size:18px; padding-left: 15px;">Dirección :</h3> 
+                    <h3 style="font-size:18px; padding-left: 15px;">Dirección:</h3> 
                     <div class="col-xs-6 col-sm-9 col-md-9">
-                            <input type="text" name="Direccion" class="form-control input-lg" placeholder="Calle #123, La Florida" tabindex="5">
+                            <input type="text" name="Direccion" class="form-control input-lg" placeholder=" Pje Cerro Melosas Oriente 2831, Puente Alto" tabindex="5">
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
                             <label style="margin-top:10px;">
@@ -127,30 +147,48 @@
                         </div>
                     </div>
                 </div>
-                <h3 style="font-size: 18px">Trabajas a domicilio?, selecciona las comunas a las que llegas:</h3>
+                <h3 style="font-size: 18px">Trabajas a domicilio? Selecciona las comunas a las que vas:</h3>
 				<br>
 				<div class="row" style="margin-left: 15px">
-				<select multiple="multiple" size="10" name="duallistbox_demo2" class="demo2 col-md-12">
-                            <option value="option1" selected="selected">Comuna 1</option>
-                            <option value="option2">Comuna 2</option>
-                            <option value="option3">Comuna 3</option>
-                            <option value="option4">Comuna 4</option>
-                            <option value="option5">Comuna 5</option>
-                            <option value="option6">Comuna 6</option>
-                            <option value="option7">Comuna 7</option>
-                            <option value="option8">Comuna 8</option>
-                            <option value="option9">Comuna 9</option>
-                            <option value="option10">Comuna 10</option>
-                            <option value="option11">Comuna 11</option>
-                            <option value="option12">Comuna 12</option>
-                            <option value="option13">Comuna 13</option>
-                            <option value="option14">Comuna 14</option>
-                            <option value="option15">Comuna 15</option>
-                            <option value="option16">Comuna 16</option>
-                            <option value="option17">Comuna 17</option>
-                            <option value="option18">Comuna 18</option>
-                            <option value="option19">Comuna 19</option>
-                            <option value="option20">Comuna 20</option>
+				<select multiple="multiple" size="10" name="duallistbox_demo2" id="comunas" class="demo2 col-md-12">
+                            <option value="option1">Cerrillos</option>
+                            <option value="option2">Cerro Navia</option>
+                            <option value="option3">Conchalí</option>
+                            <option value="option4">El Bosque</option>
+                            <option value="option5">Estación Central</option>
+                            <option value="option6">Huechuraba</option>
+                            <option value="option7">Independencia</option>
+                            <option value="option8">La Cisterna</option>
+                            <option value="option9">La Florida</option>
+                            <option value="option10">La Pintana</option>
+                            <option value="option11">La Granja</option>
+                            <option value="option12">La Reina</option>
+                            <option value="option13">Las Condes</option>
+                            <option value="option14">Lo Barnechea</option>
+                            <option value="option15">Lo Espejo</option>
+                            <option value="option16">Lo Prado</option>
+                            <option value="option17">Macul</option>
+                            <option value="option18">Maipú</option>
+                            <option value="option19">Ñuñoa</option>
+                            <option value="option20">Pedro Aguirre Cerda</option>
+                            <option value="option21">Peñalolén</option>
+                            <option value="option22">Providencia</option>
+                            <option value="option23">Pudahuel</option>
+                            <option value="option24">Quilicura</option>
+                            <option value="option25">Quinta Normal</option>
+                            <option value="option26">Recoleta</option>
+                            <option value="option27">Renca</option>
+                            <option value="option28">San Miguel</option>
+                            <option value="option29">San Joaquín</option>
+                            <option value="option30">San Ramón</option>
+                            <option value="option31" selected="selected">Santiago</option>
+                            <option value="option32">Vitacura</option> 
+                            <option value="option33">Padre Hurtado</option>
+                            <option value="option34">Pirque</option>
+                            <option value="option35">Puente Alto</option>
+                            <option value="option36">San Bernardo</option>
+                            <option value="option37">San José de Maipo</option>
+
                         </select>
                         <script>
                             var demo2 = $('.demo2').bootstrapDualListbox({
@@ -163,8 +201,50 @@
                 </div>        
 				<br>
                 <h3 style="font-size: 18px">Seleccione el horario de trabajo:</h3>
-
 				<br>
+
+				<div id="content">
+				    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+				        <li class="active"><a href="#semana" data-toggle="tab">Lunes a Viernes</a></li>
+				        <li><a href="#sabado" data-toggle="tab">Sábado</a></li>
+				        <li><a href="#domingo" data-toggle="tab">Domingo</a></li>
+				    </ul>
+				    <div id="my-tab-content" class="tab-content">
+				        <div class="tab-pane active" id="semana">
+				        	<br>
+				        	<p>De:
+							<select id="selector1" style="margin: 10px">
+							</select>
+				        	Hasta:
+							<select id="selector2" style="margin: 10px">
+							</select>
+							<label style="margin-left:50px;"><input type="checkbox"> No trabajo</label>
+							</p>						
+				        </div>
+				        <div class="tab-pane" id="sabado">
+				        	<br>
+				        	<p>De:
+							<select id="selector3" style="margin: 10px">
+							</select>
+				        	Hasta:
+							<select id="selector4" style="margin: 10px">
+							</select>
+							<label style="margin-left:50px;"><input type="checkbox"> No trabajo</label>
+							</p>						
+				        </div>
+				        <div class="tab-pane" id="domingo">
+				        	<br>
+				        	<p>De:
+							<select id="selector5" style="margin: 10px">
+							</select>
+				        	Hasta:
+							<select id="selector6" style="margin: 10px">
+							</select>
+							<label style="margin-left:50px;"><input type="checkbox"> No trabajo</label>
+							</p>						
+				        </div>
+				    </div>
+				</div>
 
 				<br><br>
 				<a href="newService3.html" class="btn btn-warning pull-right"> Siguiente </a>
@@ -177,7 +257,7 @@
 
 
     <footer>
-	<p class="copyright text-muted small" style="margin-top: 0px"></p>
+	<p class="copyright text-muted small" style="margin-top: 0px">Copyright &copy; Encuéntrelo 2014. All Rights Reserved</p>
     </footer>
 
 
@@ -185,6 +265,144 @@
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
+
+    <script>
+
+		var selection = "";
+		var i = 0;
+		for(var i = 6; i < 23; i++)
+		{
+		    var j = zeroFill(i, 2);
+		    selection += "<option value='"+ j +"00'>"+ j + ":00" + "</option>";
+		        selection += "<option value='"+ j +"30'>"+ j + ":30" + "</option>";
+		}
+		$("#selector1").html(selection);
+		function zeroFill( number, width )
+		{
+		  width -= number.toString().length;
+		  if ( width > 0 )
+		  {
+		    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		  }
+		  return number + ""; // always return a string
+		}
+
+    </script>
+
+    <script>
+
+		var selection = "";
+		var i = 0;
+		for(var i = 6; i < 23; i++)
+		{
+		    var j = zeroFill(i, 2);
+		    selection += "<option value='"+ j +"00'>"+ j + ":00" + "</option>";
+		        selection += "<option value='"+ j +"30'>"+ j + ":30" + "</option>";
+		}
+		$("#selector2").html(selection);
+		function zeroFill( number, width )
+		{
+		  width -= number.toString().length;
+		  if ( width > 0 )
+		  {
+		    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		  }
+		  return number + ""; // always return a string
+		}
+
+    </script>
+
+    <script>
+
+		var selection = "";
+		var i = 0;
+		for(var i = 6; i < 23; i++)
+		{
+		    var j = zeroFill(i, 2);
+		    selection += "<option value='"+ j +"00'>"+ j + ":00" + "</option>";
+		        selection += "<option value='"+ j +"30'>"+ j + ":30" + "</option>";
+		}
+		$("#selector3").html(selection);
+		function zeroFill( number, width )
+		{
+		  width -= number.toString().length;
+		  if ( width > 0 )
+		  {
+		    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		  }
+		  return number + ""; // always return a string
+		}
+
+    </script>
+
+    <script>
+
+		var selection = "";
+		var i = 0;
+		for(var i = 6; i < 23; i++)
+		{
+		    var j = zeroFill(i, 2);
+		    selection += "<option value='"+ j +"00'>"+ j + ":00" + "</option>";
+		        selection += "<option value='"+ j +"30'>"+ j + ":30" + "</option>";
+		}
+		$("#selector4").html(selection);
+		function zeroFill( number, width )
+		{
+		  width -= number.toString().length;
+		  if ( width > 0 )
+		  {
+		    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		  }
+		  return number + ""; // always return a string
+		}
+
+    </script>    
+
+    <script>
+
+		var selection = "";
+		var i = 0;
+		for(var i = 6; i < 23; i++)
+		{
+		    var j = zeroFill(i, 2);
+		    selection += "<option value='"+ j +"00'>"+ j + ":00" + "</option>";
+		        selection += "<option value='"+ j +"30'>"+ j + ":30" + "</option>";
+		}
+		$("#selector5").html(selection);
+		function zeroFill( number, width )
+		{
+		  width -= number.toString().length;
+		  if ( width > 0 )
+		  {
+		    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		  }
+		  return number + ""; // always return a string
+		}
+
+    </script>
+
+    <script>
+
+		var selection = "";
+		var i = 0;
+		for(var i = 6; i < 23; i++)
+		{
+		    var j = zeroFill(i, 2);
+		    selection += "<option value='"+ j +"00'>"+ j + ":00" + "</option>";
+		        selection += "<option value='"+ j +"30'>"+ j + ":30" + "</option>";
+		}
+		$("#selector6").html(selection);
+		function zeroFill( number, width )
+		{
+		  width -= number.toString().length;
+		  if ( width > 0 )
+		  {
+		    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		  }
+		  return number + ""; // always return a string
+		}
+
+    </script>
 
 </body>
 
