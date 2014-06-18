@@ -1,0 +1,19 @@
+<div class="alert alert-dismissable alert-primary notificaciones">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<strong>Juan araya</strong> Te ha enviado un mensaje por tu servicio <strong>Reparación de computadores</strong>  <a href="#" class="alert-link">Ver mensaje</a>
+</div>
+<div class="alert alert-dismissable alert-primary notificaciones">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<strong>Mauricio Abarca</strong> Ha indicado que el servicio <strong>Reparación de Bicicletas</strong> que le encargaste ha terminado  <a  id="link-calificar" href="#" class="alert-link">Confirmar y calificar ahora</a>
+</div>
+
+<script type="text/javascript">
+        $("#link-calificar").on("click",function(event){
+            event.preventDefault();
+            $('.boton-panel').removeClass("active");
+            $('#calificar').addClass("active");
+            $.ajax("components/calificar.html").done(function(result) {
+                $('.contentDiv').html(result);
+            });
+        });
+</script>

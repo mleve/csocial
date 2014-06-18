@@ -162,18 +162,22 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> Juanito Peres Perez</h4>
+				<h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> Mario Leverone</h4>
 			</div>
 				<div class="modal-body" style="padding: 5px;">
 					<div class="alert alert-success alert-dismissable exito" style="display:none;">
 					  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					  <strong>Enviado! </strong> Revisaremos los datos, gracias por informar del problema.
 					</div>
+					<div class="alert alert-success alert-dismissable exito-msg" style="display:none;">
+					  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					  Mensaje enviado!
+					</div>
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
 							<img src="img/chart_bar.png" class="img-responsive quality-bar"/>
 							<p>Proveedor destacado </p>
-							<p><a href="#">10 Recomendaciones</a></p>							
+							<p><a href="#">5 Recomendaciones</a></p>							
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-8" style="padding-bottom: 10px;">
 							<form class="form-inline" role="form">
@@ -181,7 +185,7 @@
 								<p> Selecciona que datos estan erroneos: </p>
 							</div>
 							<div class="row">
-								<img class="detailsIcon" src="img/map.png"/> Calle falsa #123 Santiago
+								<img class="detailsIcon" src="img/map.png"/> Pasaje cerro melosas oriente 2031, Puente Alto
 								<div class="checkbox reportar" style="display:none;">
 								    <label>
 								      <input type="checkbox"> 
@@ -197,7 +201,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<img class="detailsIcon" src="img/email.png"/> asdf@gmail.com <i class="fa fa-exclamation-triangle" style="color: #F5D72C; "></i>
+								<img class="detailsIcon" src="img/email.png"/> mleve@ug.uchile.cl 
 								<div class="checkbox reportar" style="display:none;">
 								    <label>
 								      <input type="checkbox"> 
@@ -209,9 +213,13 @@
 								<p>Comentario: (300 caracteres max)</p>
 								<textarea class="form-control" rows="3" style="width: 80%;"></textarea>
 							</div>
+							<div class="row contactar"  style="display:none;">
+								<p>Mensaje: (300 caracteres max)</p>
+								<textarea class="form-control" rows="3" style="width: 80%;"></textarea>
+							</div>
 							<br>
 							<div class="row">
-								<button class="btn btn-success">Contactar</button>
+								<button class="btn btn-success" id="boton_contactar">Enviar mensaje</button>
 								<button class="btn btn-danger" id="boton_reportar">Reportar datos erroneos</button>
 							</div>
 							</form>
@@ -220,8 +228,8 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
 						<h4>Horario de atención </h4>
-							<p>Lunes a viernes : 10:00 - 16:00 </p>
-							<strong> Sabado: 10:00 - 15:00</strong>
+							<p>Lunes a viernes : 10:00 - 17:00 </p>
+							<strong> Sabado: 12:00 - 17:00</strong>
 						</div>
 					</div>
 					<div class="row">
@@ -306,6 +314,18 @@
 		else{
 			$(".exito").css("display","");
 			$(".reportar").css("display","none");
+			$(this).css("display","none");
+		}
+	});
+	$('#boton_contactar').on("click",function(event){
+		event.preventDefault();
+		if($(this).html() != "enviar"){
+			$('.contactar').css("display","");
+			$(this).html("enviar");
+		}
+		else{
+			$(".exito-msg").css("display","");
+			$(".contactar").css("display","none");
 			$(this).css("display","none");
 		}
 	});	

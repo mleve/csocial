@@ -1,0 +1,72 @@
+<div class="alert alert-dismissable alert-success" style="display:none;" id="alert-mauricio">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  Gracias por calificar el servicio de Mauricio
+</div>
+<div class="panel panel-default" id="mauricio">
+      <div class="panel-heading">
+        <h3 class="panel-title" >Mauricio Abarca por el servicio "Reparación de Bicicletas"
+          <label class="pull-right">Terminado el 18-06-2014</label>
+        </h3>
+      </div>
+      <div class="panel-body" >
+        <div class="form-group">
+          <label for="inlineCheckbox1" class="col-sm-3 control-label" style="margin-left: -15px;">Como calificas este servicio: </label>
+          <div class="col-sm-9">
+            <label class="radio-inline">
+              <input type="radio" id="inlineCheckbox1" value="option1" name="radio1"> Lo recomiendo
+            </label>
+            <label class="radio-inline">
+              <input  name="radio1" type="radio" id="inlineCheckbox2" value="option2"> Neutro
+            </label>
+            <label class="radio-inline">
+              <input  name="radio1" type="radio" id="inlineCheckbox3" value="option3"> No lo recomiendo
+            </label>
+          </div>
+        </div>
+        <br>
+        <p class="pull-left">Opina aquí:</p>
+        <br>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <div class="panel-footer text-right" >
+        <button class="btn btn-default" id="enviar-mauricio"> Enviar</button>
+      </div>
+</div>
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" >Ana Martinez por el servicio "Clases Particulares, Calculo universitario"
+          <label class="pull-right"> Terminado el 10-06-2014</label>
+        </h3>
+      </div>
+      <div class="panel-body" >
+        <div class="form-group">
+          <label for="inlineCheckbox1" class="col-sm-3 control-label" style="margin-left: -15px;">Como calificas este servicio: </label>
+          <div class="col-sm-9">
+            <label class="radio-inline">
+              <input type="radio" id="inlineCheckbox1" value="option1" name="radio1"> Lo recomiendo
+            </label>
+            <label class="radio-inline">
+              <input  name="radio1" type="radio" id="inlineCheckbox2" value="option2"> Neutro
+            </label>
+            <label class="radio-inline">
+              <input  name="radio1" type="radio" id="inlineCheckbox3" value="option3"> No lo recomiendo
+            </label>
+          </div>
+        </div>
+        <br>
+        <p class="pull-left">Opina aquí:</p>
+        <br>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <div class="panel-footer text-right" >
+        <button class="btn btn-default"> Enviar</button>
+      </div>
+</div>
+
+<script type="text/javascript">
+  $('#enviar-mauricio').on("click",function(event){
+    event.preventDefault();
+    $("#mauricio").css("display","none");
+    $("#alert-mauricio").css("display","");
+  });
+</script>

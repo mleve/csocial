@@ -255,3 +255,9 @@ body{margin:40px;}
   padding: 10px;
   padding-bottom: 40px;
 }
+
+.notificaciones{
+  border: 1px solid #cecece;
+  margin-bottom: 5px;
+  font-weight: initial;
+}

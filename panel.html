@@ -32,9 +32,9 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <a href="#" class="list-group-item"><span class="badge">5</span>Notificaciones</a>
-                 <a href="#" class="list-group-item active">Servicios</a>
-                 <a href="#" class="list-group-item ">Calificar</a>
+                <a href="#" class="list-group-item boton-panel" id="Notificaciones" ><span class="badge">2</span>Notificaciones</a>
+                 <a href="#" class="list-group-item boton-panel active" id="servicios">Servicios</a>
+                 <a href="#" class="list-group-item boton-panel" id="calificar">Calificar</a>
             </div>
         </div>
         <div class="col-md-8 contentDiv">
@@ -58,6 +58,32 @@
     <script type="text/javascript">
         $.ajax('components/userServices.html').done(function(result){
             $('.contentDiv').html(result);
+        });
+
+        $("#calificar").on("click",function(event){
+            event.preventDefault();
+            $('.boton-panel').removeClass("active");
+            $(this).addClass("active");
+            $.ajax("components/calificar.html").done(function(result) {
+                $('.contentDiv').html(result);
+            });
+        });
+        $("#Notificaciones").on("click",function(event){
+            event.preventDefault();
+            $('.boton-panel').removeClass("active");
+            $(this).addClass("active");
+            $(this).html("Notificaciones");
+            $.ajax("components/notificaciones.html").done(function(result) {
+                $('.contentDiv').html(result);
+            });
+        });
+        $("#servicios").on("click",function(event){
+            event.preventDefault();
+            $('.boton-panel').removeClass("active");
+            $(this).addClass("active");
+            $.ajax("components/userServices.html").done(function(result) {
+                $('.contentDiv').html(result);
+            });
         });
     </script>
     
